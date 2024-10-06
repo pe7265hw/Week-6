@@ -1,12 +1,16 @@
+// sets center of map and zoom level
 let metroCoordinates = [44.96, -93.2]
 let zoomLevel = 9
 
+//creates map object at coordinates and zoom level
 let map = L.map('college-map').setView(metroCoordinates, zoomLevel)
 
+//creates tiles for the map and adds to map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+//array of campus objects
 campuses =  [
     {"name": "Minneapolis College", "website": "https://minneapolis.edu", "coordinates": [44.9724, -93.2844] }, 
     {"name": "Saint Paul College", "website": "https://saintpaul.edu", "coordinates": [44.94839, -93.1099] }, 
@@ -15,10 +19,14 @@ campuses =  [
     {"name": "Century College", "website": "https://www.century.edu/", "coordinates": [45.0438494,-92.9862026] }
 ]
 
+//foreach statement that adds each campus to the map with information on the college
 campuses.forEach(function(campus){
     let markerText = `${campus.name}<br><a href="${campus.website}">Website</a>`
     L.marker(campus.coordinates).bindPopup(markerText).addTo(map)
 })
+
+
+//below are examples of adding colleges individuallys w/o the use of a loop
 
 // let mctcCoordinates = [44.9724, -93.2844]
 // let mctcMarker = L.marker(mctcCoordinates)

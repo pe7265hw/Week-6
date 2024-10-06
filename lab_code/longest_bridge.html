@@ -2,24 +2,32 @@
 <html>
 <head>
     <title>Longest Bridges in America</title>
-
+    <!--Creates a styles sheet for leaflet map-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
+    crossorigin=""/>   
 
-    
+    <!--Script file for leaflet map-->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
 
+     <!--Script file for chart.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <script async defer src="longest_bridge_packages.js"></script>
+
+    <!--Link to CSS stylesheet-->
     <link rel="stylesheet" href="longest_bridge_style.css" types="text/css">
 
+    <!--Link to .js file-->
     <script asysrc defer src ="longest_bridge_packages.js"></script>
 </head>
 <body>
 
     <h1>Where are the longest Bridges?</h1>
-    <div id="bridge-map"></div>
+    <div id="bridge-map"></div> <!--div element that will contain the map-->
+
+    <canvas id="bridge-chart"></canvas> <!--Chart will go here-->
 
 </body>
 </html>
